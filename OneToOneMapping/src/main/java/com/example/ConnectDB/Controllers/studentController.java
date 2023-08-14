@@ -4,10 +4,7 @@ package com.example.ConnectDB.Controllers;
 import com.example.ConnectDB.Models.Student;
 import com.example.ConnectDB.Services.studentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/student")
@@ -20,4 +17,14 @@ public class studentController {
        {
            return service.addStudentData(student);
        }
+
+       @DeleteMapping("/deleteData")
+       public String deleteData(@RequestParam Integer id)
+       {
+              return service.deleteData(id);
+       }
+
+
+
+
 }

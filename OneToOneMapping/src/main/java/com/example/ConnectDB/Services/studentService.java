@@ -26,4 +26,17 @@ public class studentService {
              return "student added successfully";
          }
     }
+
+    public String deleteData(Integer id)
+    {
+        if(!repository.existsById(id))
+        {
+            return "Invalid id";
+        }
+        else {
+
+            repository.deleteById(id);
+            return "deleted Successfully";
+        }
+    }
 }
