@@ -2,9 +2,12 @@ package com.example.ConnectDB.Services;
 
 import com.example.ConnectDB.Models.Student;
 import com.example.ConnectDB.Repositories.studentRepository;
+import com.example.ConnectDB.RequestDTOs.StudentRequestDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
+
+import java.util.Optional;
 
 @Service
 public class studentService {
@@ -38,5 +41,23 @@ public class studentService {
             repository.deleteById(id);
             return "deleted Successfully";
         }
+    }
+
+
+    public String updateData(StudentRequestDto obj)throws Exception
+    {
+        Optional<Student>studentOptional = repository.findById(obj.getRollNo());
+        if(!studentOptional.isPresent())
+        {
+            throw new Exception ("Invalid roll No");
+        }
+
+        Student studentObj = studentOptional.get();
+
+        studentObj.setName(obj.getNewName());
+        studentObj.setPlace(obj.getNewPlace());
+
+        repository.save(studentObj);
+        return "updated successfylly";
     }
 }
