@@ -7,6 +7,8 @@
         <option value="$PROJECT_DIR$/ConnectDB/pom.xml" />
         <option value="$PROJECT_DIR$/SpringBootJPA/pom.xml" />
         <option value="$PROJECT_DIR$/OneToOneMapping/pom.xml" />
+        <option value="$PROJECT_DIR$/make-your-trip/pom.xml" />
+        <option value="$PROJECT_DIR$/OneToMany/pom.xml" />
       </list>
     </option>
   </component>

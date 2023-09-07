@@ -99,8 +99,9 @@ public class BookingService {
 
 
         //Save kaise kroge figure out krna ////
+        bookingRepository.save(booking);
 
-        return null;
+        return "Booked Successfully";
 
     }
 
@@ -132,7 +133,24 @@ public class BookingService {
 
         //TODO Function to find the total price for all
         //INTERESTING : PLEASE TRY THIS
-        return 0;
+        List<Seat> seatList = transport.getSeatList();
+
+        String[] AllseatNos = seatNos.split(",");
+
+        Integer totalPrize =0;
+
+        for(String seatNo : AllseatNos){
+
+            for(Seat seat : seatList){
+
+                if(seat.getSeatNo().equals(seatNo)){
+
+                    totalPrize+=seat.getPrice();
+                }
+            }
+        }
+
+        return totalPrize;
     }
 
 

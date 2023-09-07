@@ -33,7 +33,9 @@ public class BookingControllers {
     @PostMapping("/bookFlight")
     public ResponseEntity bookFlight(@RequestBody BookingRequest bookingRequest){
 
-    return null;
+         String res = bookingService.makeABooking(bookingRequest);
+        return new ResponseEntity(res, HttpStatus.OK);
+
     }
 
 

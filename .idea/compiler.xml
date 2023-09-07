@@ -7,19 +7,19 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ConnectDB" />
+        <module name="make-your-trip" />
+        <module name="OneToMany" />
         <module name="OneToOneMapping" />
         <module name="SpringBootJPA" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="OneToMany" target="19" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ConnectDB" options="-parameters" />
       <module name="OneToOneMapping" options="-parameters" />
       <module name="SpringBootJPA" options="-parameters" />
+      <module name="make-your-trip" options="-parameters" />
     </option>
   </component>
 </project>
